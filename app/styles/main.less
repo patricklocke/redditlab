@@ -1,3 +1,40 @@
 @import '../../node_modules/platypusui/dist/platypus';
 
 @import '../src/viewcontrols/home/home.vc.less';
+
+#platui {
+    #grid {
+        @base-percent: 100%;
+        @num-columns: 12;
+        @column-padding: 0px;
+    }
+}
+
+.bigbox{
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid black;
+    height: 600px;
+    .gifbox {
+        max-width: 400px;
+        max-height: 250px;
+        overflow: hidden;
+    }
+}
+
+.fullzoom {
+  .gifbox{
+      max-width: none;
+      max-height: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+  }
+  .transparent{
+  background:rgba(255,255,255,0.5) no-repeat center center fixed;;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+}

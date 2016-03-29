@@ -11,5 +11,5 @@ export default class BaseService {
 	protected Promise: async.IPromise;
 	protected utils: Utils;
 
-    host: string = 'http://www.reddit.com/r/combinedgifs+gifs+hqrg+reactiongifs.json';
+    host: string = 'http://www.reddit.com/r/combinedgifs+gifs+hdrg+reactiongifs.json';
 }

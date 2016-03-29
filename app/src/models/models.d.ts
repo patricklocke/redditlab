@@ -3,8 +3,8 @@ declare module models {
         title: string;
         author: string;
         id: string;
-        url: string;
-        preview: any;
-        created_utc: Date;
-    }
+        url?: string;
+        preview?: any;
+        created_utc?: Date;
+        }
 }

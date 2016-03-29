@@ -1,7 +1,12 @@
 <h1>Super Gif Land</h1>
 
-<plat-repeat plat-context="posts">
-<h1>{{title}}</h1>
-<h2>{{author}</h2>
-<h3>{{createdAt}}</h3>
-</plat-repeat>
+<plat-ForEach  plat-context="filteredData">
+    <span class="col-dsk-4 col-tab-6 col-phn-12 bigbox">
+    <div class="gifbox">
+        <img class="gif" src='{{url}}'/>
+    </div>
+    <h3>{{title}}</h1>
+    <h4> By: {{author}}</h2>
+    <p>Score: {{upvotes}}</p>
+    </span>
+</plat-ForEach>

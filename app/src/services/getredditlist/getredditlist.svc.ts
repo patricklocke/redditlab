@@ -10,23 +10,23 @@ export default class GetRedditListService extends BaseService {
         super()
     }
     
-    GetRedditPosts():async.IThenable<Array<any>>{
+    getRedditLists():async.IThenable<any>{
+        console.log('getRedditLists is called by getRedditPosts()')
        return this.http.json ({
            url: this.host,
-           method: "GET"
-       }).then((success => {
-           console.log("Woooo!");
-           return success.response;
-       }, (err) => {
-           console.log("Oops...");
-       });
-        
+           method: 'GET'
+        }).then((success:any ) => {
+            return success.response.data.children;
+        }, (err) =>{
+            throw err;
+        });     
     }
-    
-    
-    
-    
 }
+    
+    
+    
+    
+
 
 
 

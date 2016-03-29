@@ -7,16 +7,24 @@ export default class HomeViewControl extends BaseViewControl {
     constructor(private getPosts: getRedditListRepository){
         super();
     };
-        context = {
-        posts: <models.IRedditPost>{}
+        context: any = {
+        posts: <models.IRedditPost>{},
+        filteredData: <Array<any>>[]
     };
     navigatedTo(){
-        this.getPosts.getRedditList().then((success) => {
-            console.log(this)
-        }, (err) => {
-            console.log("nope, that didn't work")
-        })
+        console.log("have navigated to calles getRedditPosts()")
+        this.getPosts.getRedditPosts()
+        .then((success) => {
+            this.context.filteredData = success;
+            console.log('wohoo!');
+        });
     };
+    // toggleView(){
+    //     this.("fullzoom","gifbox")
+    // }
+    
+       
+
 }
 
 register.viewControl('home-vc', HomeViewControl, [getRedditListRepository]);
