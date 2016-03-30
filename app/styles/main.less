@@ -2,6 +2,8 @@
 
 @import '../src/viewcontrols/home/home.vc.less';
 
+
+
 #platui {
     #grid {
         @base-percent: 100%;
@@ -9,32 +11,140 @@
         @column-padding: 0px;
     }
 }
+#platui {
+    #Modal {
+        #dependencies {
+           #platui > #variables;
+           @transition-time: 500ms;
+           @fade-transition-time: 300ms;
+           @prompt-background-color: @pale-grey;
+        
+        }
+
+        #platui > #Modal > #dependencies;
+
+    /// =========== Modal Colors =========== ///
+
+        @color: @default-font-color;
+        @backdrop-color: @transparent;
+        @background-color: @white;
+
+    /// =========== Modal Sizes =========== ///
+
+        #custom-height {
+            @height: 50%;
+            @y-offset: 0%;
+        }
+
+        #custom-width {
+            @width: 50%;
+            @x-offset: 0%;
+        }
+
+        #custom {
+            @width: 50%;
+            @height: 50%;
+            @x-offset: 0%;
+            @y-offset: 0%;
+        }
+
+    /// =========== Modal Transitions =========== ///
+
+        @left-transition: right @transition-time;
+        @right-transition: left @transition-time;
+        @up-transition: bottom @transition-time;
+        @down-transition: top @transition-time;
+        @fade-transition: opacity @fade-transition-time;
+
+    /// =========== Modal Prompt =========== ///
+
+        @prompt-top: 20%;
+        @prompt-width: 80%;
+        @prompt-max-width: 30em;
+        @prompt-backdrop-color: rgba(0,0,0,0.6);
+        @prompt-title-color: @prompt-background-color;
+        @prompt-title-background-color: @primary-color;
+        @prompt-body-background-color: @prompt-background-color;
+        @prompt-action-background-color: @prompt-background-color;
+        @prompt-accent-color: darken(@prompt-background-color, 5%);
+        @prompt-border-radius: 8px;
+        @prompt-up-transition: top @transition-time;
+
+    /// =========== Variable Modal Styles =========== ///
+
+        .plat-modal(@prop; @value) {
+            // transition-time
+                // affects left-transition, right-transition, up-transition, down-transition, prompt-up-transition
+            // fade-transition-time
+                // affects fade-transition
+
+            // color
+            // backdrop-color
+            // background-color
+            // left-transition
+            // right-transition
+            // up-transition
+            // down-transition
+            // fade-transition
+            // custom-height_height
+            // custom-height_y-offset
+            // custom-width_width
+            // custom-width_x-offset
+            // custom_width
+            // custom_height
+            // custom_x-offset
+            // custom_y-offset
+        }
+
+    /// =========== Variable Modal Prompt Styles =========== ///
+
+        .plat-modal-prompt(@prop; @value) {
+            // prompt-background-color
+                // affects prompt-title-color, prompt-body-background-color, prompt-action-background-color, prompt-accent-color
+
+            // prompt-top
+            // prompt-width
+            // prompt-max-width
+            // prompt-backdrop-color
+            // prompt-title-color
+            // prompt-title-background-color
+            // prompt-body-background-color
+            // prompt-action-background-color
+            // prompt-accent-color
+            // prompt-border-radius
+            // prompt-up-transition
+        }
+    }
+}
 
 .bigbox{
     padding: 5px;
     margin: 5px;
-    border: 2px solid black;
-    height: 600px;
-    .gifbox {
-        max-width: 400px;
-        max-height: 250px;
+    border: 2px solid #999;
+    height: 500px;
+    clear: both;
+    text-align: center;
+    border-radius: 25px;
+    background: #DDD;
+    
+ 
+    .info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: auto;
+        width: auto;
+        text-align: left;
+        padding: 10px;
+        margin: 10px;
+    }
+    .gif{
+        max-height:350px;
+        max-width: 95%;
         overflow: hidden;
+        margin-top: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
     }
 }
 
-// .fullzoom {
-//   .gifbox{
-//       max-width: none;
-//       max-height: none;
-//       position: absolute;
-//       top: 50%;
-//       left: 50%;
-//   }
-//   .transparent{
-//   background:rgba(255,255,255,0.5) no-repeat center center fixed;;
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
-//   }
-// }

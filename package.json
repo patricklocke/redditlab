@@ -11,7 +11,7 @@
     "minifyify": "latest",
     "mkdirp": "latest",
     "platypus": "latest",
-    "platypusui": "latest",
+    "platypusui": "^0.14.7",
     "stringify": "^3.2.1",
     "tsconfig-glob": "latest",
     "tsconfig-lint": "latest",

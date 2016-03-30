@@ -29,22 +29,18 @@ export default class GetRedditListRepository extends BaseRepository {
                         urlarray.push(url);
                     }
                 }
-                
                 for (let i = 0; i < posts.length; i++){
                     let newPost = {
                         author: posts[i].data.author,
                         createdAt: posts[i].data.created_utc,
                         title: posts[i].data.title,
                         upvotes: posts[i].data.ups,
-                        preview: posts[i].data.preview,
                         url: urlarray[i]
-                    };
-                    
+                    }
                     filteredData.push(newPost);
-                    console.log(urlarray[i]);
-                };;
+                }
+                console.log(filteredData);
                 return filteredData;
-                
             });
     }       
 }

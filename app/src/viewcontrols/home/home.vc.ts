@@ -9,7 +9,7 @@ export default class HomeViewControl extends BaseViewControl {
     };
         context: any = {
         posts: <models.IRedditPost>{},
-        filteredData: <Array<any>>[]
+        filteredData: <Array<any>>[],
     };
     navigatedTo(){
         console.log("have navigated to calles getRedditPosts()")
@@ -19,12 +19,7 @@ export default class HomeViewControl extends BaseViewControl {
             console.log('wohoo!');
         });
     };
-    // toggleView(){
-    //     this.("fullzoom","gifbox")
-    // }
-    
-       
-
 }
+
 
 register.viewControl('home-vc', HomeViewControl, [getRedditListRepository]);
