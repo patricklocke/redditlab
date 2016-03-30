@@ -3,7 +3,6 @@
 @import '../src/viewcontrols/home/home.vc.less';
 
 
-
 #platui {
     #grid {
         @base-percent: 100%;
@@ -11,13 +10,14 @@
         @column-padding: 0px;
     }
 }
+
 #platui {
     #Modal {
         #dependencies {
            #platui > #variables;
            @transition-time: 500ms;
            @fade-transition-time: 300ms;
-           @prompt-background-color: @pale-grey;
+           @prompt-background-color: rgba(235,235,235,0.1);
         
         }
 
@@ -25,7 +25,7 @@
 
     /// =========== Modal Colors =========== ///
 
-        @color: @default-font-color;
+        @color: white;
         @backdrop-color: @transparent;
         @background-color: @white;
 
@@ -59,10 +59,10 @@
     /// =========== Modal Prompt =========== ///
 
         @prompt-top: 20%;
-        @prompt-width: 80%;
-        @prompt-max-width: 30em;
-        @prompt-backdrop-color: rgba(0,0,0,0.6);
-        @prompt-title-color: @prompt-background-color;
+        @prompt-width: auto;
+        @prompt-max-width: 50em;
+        @prompt-backdrop-color: rgba(0,0,0,0.85);
+        @prompt-title-color: @white;
         @prompt-title-background-color: @primary-color;
         @prompt-body-background-color: @prompt-background-color;
         @prompt-action-background-color: @prompt-background-color;
@@ -116,29 +116,62 @@
         }
     }
 }
-
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #CCC
+}
+html{
+    background-image: url('../../images/binding_dark.png');
+    
+}
 .bigbox{
-    padding: 5px;
-    margin: 5px;
+    padding: 15px;
+    color: white;
+    margin-top: 50px;
+    margin: 15px 15px;
     border: 2px solid #999;
+    box-shadow: 5px 5px 5px #999;
     height: 500px;
     clear: both;
     text-align: center;
-    border-radius: 25px;
-    background: #DDD;
+    border-radius: 5px;
+    background: rgba(10,10,10,0.2);
+    filter: blur(50px);
     
- 
+    .title{
+        position: absolute;
+        top: 15px;
+        height:150px;
+        width: 80%;
+    }
     .info {
         position: absolute;
-        bottom: 0;
-        left: 0;
+        bottom: 5px;
         height: auto;
-        width: auto;
-        text-align: left;
-        padding: 10px;
-        margin: 10px;
+        width: 100%;
+        .button{
+            text-align: center;
+            vertical-align: center;
+            clear: both;
+            border-radius: 15px;
+            bottom: 20px;
+            margin-top: 15px;
+            width: 50%;
+            
+        }
+        .text{
+            text-align: left;
+            float: left;
+            clear: both;
+            padding: 10px;
+            margin: 20px; 
+        }
+        }
+
     }
-    .gif{
+    .giffy{
+        padding-top: 75px;
         max-height:350px;
         max-width: 95%;
         overflow: hidden;
@@ -146,5 +179,13 @@
         margin-left: 5px;
         margin-right: 5px;
     }
+    
+.carousel {
+    color: white;
+    font-size: 1em;
+    height: 600px;
+    width: 100%;
 }
+
+@import '../src/viewcontrols/home/home.vc.less';
 

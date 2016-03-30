@@ -1,35 +1,29 @@
-
-
-<!-- Button that calls the modal -->
-<plat-button class="button-primary" plat-tap="toggleModal('boots')">Show Modal</plat-button>
-<!-- The Modal -->
-<plat-modal plat-options="{ transition: 'down' }" plat-bind="boots">
-    <plat-button class="button-danger" plat-tap="toggleModal('boots'')">Close</plat-button>
-</plat-modal>
-
-
-<!--<plat-ForEach  plat-context="filteredData">
+<plat-ForEach plat-context="filteredData">
     <div class="col-dsk-4 col-tab-6 col-phn-12">
-        <div class="bigbox" plat-tap="toggleModal('highlight')">
+        <div class="bigbox" plat-tap="showModal(@index)" id='@index'>
+            <h4 class="title">{{title}}</h4>
             <div class="gifbox">
-                <img class="gif" src='{{url}}' width="{{width}}"" height="auto"/>
+                <img class="giffy" plat-src='{{preview.images[0].source.url}}' width="{{width}}" height="auto" />
             </div>
             <div class="info">
-                <h4 class="title">{{title}}</h4>
-                <p class="author"> By: {{author}}  |  Score: {{upvotes}}</p>  
+                <p class="author"> By: {{author}} | Score: {{upvotes}} </p>
+                <div class="prompt-action">
+                </div>
             </div>
         </div>
-        <plat-modal plat-options="{ transition: 'fade' }" plat-bind="highlight" class="modal-prompt">
-            <div class="prompt-title">{{title}}</div>
-            <div class="prompt-body">
-                <p>We suggest checking yourself because the trajectory you're on leads to wrecking yourself.</p>
-            </div>
-            <div class="prompt-action">
-                <plat-button class="button-primary" plat-tap="toggleModal('modal2')">Continue</plat-button>
-            </div>
-        </plat-modal>
     </div>
-
+    </div>
 </plat-ForEach>
--->
 
+
+<plat-modal plat-options="{ transition: 'fade' }" plat-bind="giffyModal" class="modal-prompt" plat-tap="dismissModal()">
+    <div class="prompt-title">{{modalPost.title}}</div>
+    <div class="prompt-body">
+        <img plat-src="{{modalPost.url}}" width="{{width}}" height="{{height}}">
+        <p>By: {{modalPost.author}} | Score: {{modalPost.upvotes}}</p>
+
+    </div>
+    <div class="prompt-action">
+        <plat-button class="button-danger" plat-tap="dismissModal()">Back</plat-button>
+    </div>
+</plat-modal>

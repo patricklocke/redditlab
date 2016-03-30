@@ -10,34 +10,45 @@ export default class GetRedditListRepository extends BaseRepository {
             let filteredData: any = [];
             let urlarray: any = []
             return this.GetRedditListService.getRedditLists().then((posts: any) => {
-                for(let k = 0; k < posts.length; k++) {    
-                    
-                    let url = posts[k].data.url
-                    let giant = 'giant.';
-                    let giffy = '.gif';
-                    let find = url.indexOf('gfycat')
-                    
-                    if (url.slice(-4) == 'gifv'){
-                        let fixedurl = url.slice(0,-1);
-                        let stringy = String(fixedurl)
-                        urlarray.push(stringy);
-                        
-                    } else if (url.indexOf('gfycat') >= 0) {
-                        let newUrl = (url.slice(0,find) + giant + url.slice(find)+ giffy);
-                        urlarray.push(newUrl);   
-                    } else {
-                        urlarray.push(url);
-                    }
-                }
+                
                 for (let i = 0; i < posts.length; i++){
+                    
+                    var urlFixed = function() {
+                        let url = posts[i].data.url
+                        let giant = 'giant.';
+                        let giffy = '.gif';
+                        let find = url.indexOf('gfycat');
+                        let fixer = '';
+                        
+                        if (url.slice(-4) == 'gifv') {
+                             fixer = url.slice(0, -1); 
+                             return fixer;       
+                        } else if (url.indexOf('gfycat') >= 0) {
+                            fixer =  (url.slice(0, find) + giant + url.slice(find) + giffy);
+                            return fixer;
+                        } else {
+                            fixer = url;
+                            return  fixer
+                        }
+                    }
+                   
+                  
+                   
                     let newPost = {
                         author: posts[i].data.author,
                         createdAt: posts[i].data.created_utc,
                         title: posts[i].data.title,
                         upvotes: posts[i].data.ups,
-                        url: urlarray[i]
+                        preview: posts[i].data.preview,
+                        width: posts[i].data.media_embed.width,
+                        height: posts[i].data.media_embed.height,
+                        url: urlFixed(),
+                        id: posts[i].data.id
+                        
+
                     }
                     filteredData.push(newPost);
+                    
                 }
                 console.log(filteredData);
                 return filteredData;

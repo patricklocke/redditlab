@@ -26,6 +26,7 @@
         "app/src/services/base/base.svc.ts",
         "app/src/services/getredditlist/getredditlist.svc.ts",
         "app/src/viewcontrols/base/base.vc.ts",
-        "app/src/viewcontrols/home/home.vc.ts"
+        "app/src/viewcontrols/home/home.vc.ts",
+        "app/src/viewcontrols/navbar/navbar.vc.ts"
     ]
 }

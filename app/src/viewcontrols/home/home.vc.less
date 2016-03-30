@@ -7,3 +7,167 @@
 
     }
 }
+
+#platui {
+    #Modal {
+        #dependencies {
+           #platui > #variables;
+           @transition-time: 500ms;
+           @fade-transition-time: 300ms;
+           @prompt-background-color: rgba(235,235,235,0.1);
+        
+        }
+
+        #platui > #Modal > #dependencies;
+
+    /// =========== Modal Colors =========== ///
+
+        @color: white;
+        @backdrop-color: @transparent;
+        @background-color: @white;
+
+    /// =========== Modal Sizes =========== ///
+
+        #custom-height {
+            @height: 50%;
+            @y-offset: 0%;
+        }
+
+        #custom-width {
+            @width: 50%;
+            @x-offset: 0%;
+        }
+
+        #custom {
+            @width: 50%;
+            @height: 50%;
+            @x-offset: 0%;
+            @y-offset: 0%;
+        }
+
+    /// =========== Modal Transitions =========== ///
+
+        @left-transition: right @transition-time;
+        @right-transition: left @transition-time;
+        @up-transition: bottom @transition-time;
+        @down-transition: top @transition-time;
+        @fade-transition: opacity @fade-transition-time;
+
+    /// =========== Modal Prompt =========== ///
+
+        @prompt-top: 20%;
+        @prompt-width: auto;
+        @prompt-max-width: 50em;
+        @prompt-backdrop-color: rgba(0,0,0,0.85);
+        @prompt-title-color: @white;
+        @prompt-title-background-color: @primary-color;
+        @prompt-body-background-color: @prompt-background-color;
+        @prompt-action-background-color: @prompt-background-color;
+        @prompt-accent-color: darken(@prompt-background-color, 5%);
+        @prompt-border-radius: 8px;
+        @prompt-up-transition: top @transition-time;
+
+    /// =========== Variable Modal Styles =========== ///
+
+        .plat-modal(@prop; @value) {
+            // transition-time
+                // affects left-transition, right-transition, up-transition, down-transition, prompt-up-transition
+            // fade-transition-time
+                // affects fade-transition
+
+            // color
+            // backdrop-color
+            // background-color
+            // left-transition
+            // right-transition
+            // up-transition
+            // down-transition
+            // fade-transition
+            // custom-height_height
+            // custom-height_y-offset
+            // custom-width_width
+            // custom-width_x-offset
+            // custom_width
+            // custom_height
+            // custom_x-offset
+            // custom_y-offset
+        }
+
+    /// =========== Variable Modal Prompt Styles =========== ///
+
+        .plat-modal-prompt(@prop; @value) {
+            // prompt-background-color
+                // affects prompt-title-color, prompt-body-background-color, prompt-action-background-color, prompt-accent-color
+
+            // prompt-top
+            // prompt-width
+            // prompt-max-width
+            // prompt-backdrop-color
+            // prompt-title-color
+            // prompt-title-background-color
+            // prompt-body-background-color
+            // prompt-action-background-color
+            // prompt-accent-color
+            // prompt-border-radius
+            // prompt-up-transition
+        }
+    }
+}
+
+html{
+    background-image: url('http://cdn.wonderfulengineering.com/wp-content/uploads/2014/09/no-wallpaper-27.jpg');
+    
+}
+.bigbox{
+    padding: 15px;
+    margin-top: 50px;
+    margin: 15px 15px;
+    border: 2px solid #999;
+    height: 500px;
+    clear: both;
+    text-align: center;
+    border-radius: 25px;
+    background: rgba(235,235,235,0.3);
+    filter: blur(50px);
+    
+    .title{
+        position: absolute;
+        top: 15px;
+        height:150px;
+        width: 90%;
+    }
+    .info {
+        position: absolute;
+        bottom: 5px;
+        height: auto;
+        width: 100%;
+        .button{
+            text-align: center;
+            vertical-align: center;
+            clear: both;
+            border-radius: 15px;
+            bottom: 20px;
+            margin-top: 15px;
+            width: 50%;
+            
+        }
+        .text{
+            text-align: left;
+            float: left;
+            clear: both;
+            padding: 10px;
+            margin: 20px; 
+        }
+        }
+
+    }
+    .giffy{
+        padding-top: 75px;
+        max-height:350px;
+        max-width: 95%;
+        overflow: hidden;
+        margin-top: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
